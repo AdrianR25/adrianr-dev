@@ -1,18 +1,14 @@
-<div class="">
-	<nav class="">
-		<ul class="">
-			<li class="">
-			  <a class="" routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="">Home</a>
-			</li>
-			<li class="">
-			  <a class="" routerLink="/projects" routerLinkActive="">Projects</a>
-			</li>
-			<li class="">
-			  <a class="" routerLink="/about" routerLinkActive="">About me</a>
-			</li>
-			<li class="">
-			  <a class="" routerLink="/contact" routerLinkActive="">Contact</a>
-			</li>
-		</ul>
-	</nav>
-</div>
+<ul class="flex flex-row justify-between px-12 py-2 mx-auto mb-5 w-96 bg-white rounded-full custom-drop-shadow dark:bg-slate-800 dark:text-slate-100">
+	<li class="w-12 h-12 flex justify-center items-center" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	  <a class="" routerLink="/"><fa-icon class="" [icon]="homeIcon" size="lg"></fa-icon></a>
+	</li>
+	<li class="w-12 h-12 flex justify-center items-center" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	  <a class="" routerLink="/projects"><fa-icon [icon]="projectsIcon" size="lg"></fa-icon></a>
+	</li>
+	<li class="w-12 h-12 flex justify-center items-center" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	  <a class="" routerLink="/about"><fa-icon [icon]="aboutIcon" size="lg"></fa-icon></a>
+	</li>
+	<li class="w-12 h-12 flex justify-center items-center" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	  <a class="" routerLink="/contact"><fa-icon [icon]="contactIcon" size="lg"></fa-icon></a>
+	</li>
+</ul>
