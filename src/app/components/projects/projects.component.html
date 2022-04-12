@@ -1,1 +1,5 @@
 <p>projects works!</p>
+<div *ngFor="let project of projects">
+    <p>{{ project.fields.name }}</p>
+    <img src="{{ project.fields.screenshot.fields.file.url }}" alt="">
+</div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Entry } from 'contentful';
+import { Observable } from 'rxjs';
+import { ContentfulService } from 'src/app/services/contentful.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  projects!: Entry<any>[];
+  constructor(private contentful: ContentfulService) { }
 
   ngOnInit(): void {
+    this.contentful.getProjects().then(projects => {
+      this.projects = projects;
+      console.log(projects[0].fields);
+    });
   }
 
 }
