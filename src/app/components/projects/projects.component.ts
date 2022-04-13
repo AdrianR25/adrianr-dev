@@ -17,7 +17,6 @@ export class ProjectsComponent implements OnInit {
     this.contentful.getProjects().then(projects => {
       this.projects = projects;
     });
-    this.contentful.logContent('ugevY58nYjFFPoOBnm2xF');
   }
 
 }
