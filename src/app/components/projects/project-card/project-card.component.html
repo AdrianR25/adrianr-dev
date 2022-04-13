@@ -1,7 +1,9 @@
-<div class="bg-stone-100 w-80 rounded-md">
+<div class="bg-white w-80 rounded-md shadow-md dark:text-white dark:bg-gray-900">
 	<h4 class="p-4 text-xl font-semibold">{{ name }}</h4>
 	<img src="{{ imgSrc }}" alt>
 	<p class="p-4">{{ shortDesc }}</p>
-	<a *ngIf="projectUrl" href="{{ projectUrl }}">Live Demo</a>
-	<a *ngIf="codeUrl" href="{{ codeUrl }}">Code</a>
+	<div class="p-4 pt-0 flex justify-end">
+		<app-button *ngIf="projectUrl" type="link" [href]="projectUrl" [icon]="linkIcon">Live Demo</app-button>
+		<app-button *ngIf="codeUrl" type="link" [href]="codeUrl" [icon]="codeIcon" class="ml-3">Code</app-button>
+	</div>
 </div>

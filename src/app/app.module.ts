@@ -10,6 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
+import { ButtonComponent } from './components/building-blocs/button/button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProjectCardComponent } from './components/projects/project-card/project
     ProjectsComponent,
     AboutComponent,
     ContactComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

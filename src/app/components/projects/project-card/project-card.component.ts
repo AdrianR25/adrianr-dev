@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowCircleUp, faArrowUp, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-project-card',
@@ -12,6 +14,9 @@ export class ProjectCardComponent implements OnInit {
   @Input() shortDesc = '';
   @Input() projectUrl = '';
   @Input() codeUrl = '';
+
+  linkIcon = faExternalLinkAlt;
+  codeIcon = faGithub;
 
   constructor() { }
 
