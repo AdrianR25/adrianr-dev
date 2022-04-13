@@ -1,5 +1,10 @@
-<p>projects works!</p>
-<div *ngFor="let project of projects">
-    <p>{{ project.fields.name }}</p>
-    <img src="{{ project.fields.screenshot.fields.file.url }}" alt="">
+<!-- <app-project-card *ngFor="let project of projects" [name]="project.fields.name"
+    [imgSrc]="project.fields.screenshot.fields.file.url" [shortDesc]="project.fields.shortDescription">
+</app-project-card> -->
+
+<div class="p-4">
+    <app-project-card [name]="projects[0].fields.name" [imgSrc]="projects[0].fields.screenshot.fields.file.url"
+        [shortDesc]="projects[0].fields.shortDescription" [projectUrl]="projects[0].fields.projectUrl"
+        [codeUrl]="projects[0].fields.codeUrl">
+    </app-project-card>
 </div>

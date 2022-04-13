@@ -24,7 +24,7 @@ export class ContentfulService {
     return from(promise).pipe(map(entry => entry.fields));
   }
   getProjects() {
-    const promise = this.client.getEntries({select: 'fields.name,fields.screenshot', content_type: 'project'});
+    const promise = this.client.getEntries({select: 'fields.name,fields.screenshot,fields.shortDescription,fields.projectUrl,fields.codeUrl', content_type: 'project'});
     return promise.then(res => res.items);
   }
   /*

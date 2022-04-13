@@ -16,8 +16,8 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.contentful.getProjects().then(projects => {
       this.projects = projects;
-      console.log(projects[0].fields);
     });
+    this.contentful.logContent('ugevY58nYjFFPoOBnm2xF');
   }
 
 }

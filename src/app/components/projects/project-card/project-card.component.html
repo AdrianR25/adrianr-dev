@@ -1,0 +1,7 @@
+<div class="bg-stone-100 w-80 rounded-md">
+	<h4 class="p-4 text-xl font-semibold">{{ name }}</h4>
+	<img src="{{ imgSrc }}" alt>
+	<p class="p-4">{{ shortDesc }}</p>
+	<a *ngIf="projectUrl" href="{{ projectUrl }}">Live Demo</a>
+	<a *ngIf="codeUrl" href="{{ codeUrl }}">Code</a>
+</div>
