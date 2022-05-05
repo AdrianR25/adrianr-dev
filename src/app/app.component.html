@@ -1,4 +1,6 @@
-<div class="h-screen relative dark:bg-slate-800 transition-all duration-500 background-image">
-	<router-outlet></router-outlet>
-	<app-navbar class="fixed bottom-0 w-full"></app-navbar>
+<div class="h-full min-h-screen relative dark:bg-slate-800 transition-all duration-500 background-image">
+	<div class=" h-full box-border">
+		<router-outlet></router-outlet>
+	</div>
 </div>
+<app-navbar class="fixed bottom-0 w-full"></app-navbar>

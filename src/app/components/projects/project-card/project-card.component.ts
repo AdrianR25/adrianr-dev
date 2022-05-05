@@ -14,6 +14,7 @@ export class ProjectCardComponent implements OnInit {
   @Input() shortDesc = '';
   @Input() projectUrl = '';
   @Input() codeUrl = '';
+  @Input() projectId = '';
 
   linkIcon = faExternalLinkAlt;
   codeIcon = faGithub;

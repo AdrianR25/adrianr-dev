@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
 import { ButtonComponent } from './components/building-blocs/button/button.component';
+import { ProjectDetailsComponent } from './components/projects/project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ButtonComponent } from './components/building-blocs/button/button.compo
     AboutComponent,
     ContactComponent,
     ProjectCardComponent,
-    ButtonComponent
+    ButtonComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,

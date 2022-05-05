@@ -21,7 +21,8 @@ export class ContentfulService {
   // retrieves content mapped to its data fields
   getProject(contentId: string) {
     const promise = this.client.getEntry(contentId);
-    return from(promise).pipe(map(entry => entry.fields));
+    //return from(promise).pipe(map(entry => entry.fields));
+    return promise.then(res => res.fields);
   }
   getProjects() {
     const promise = this.client.getEntries({select: 'fields.name,fields.screenshot,fields.shortDescription,fields.projectUrl,fields.codeUrl', content_type: 'project'});

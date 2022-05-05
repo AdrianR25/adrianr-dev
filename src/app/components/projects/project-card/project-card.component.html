@@ -1,6 +1,8 @@
 <div class="bg-white border-solid border-black border-2 w-80 rounded-md shadow-md dark:text-white dark:bg-gray-900">
-	<h4 class="p-4 text-xl font-semibold">{{ name }}</h4>
-	<img src="{{ imgSrc }}" alt>
+	<a [routerLink]="['/project', projectId]">
+		<h4 class="p-4 text-xl font-semibold">{{ name }}</h4>
+		<img src="{{ imgSrc }}" alt>
+	</a>
 	<p class="p-4">{{ shortDesc }}</p>
 	<div class="p-4 pt-0 flex justify-end">
 		<app-button *ngIf="projectUrl" type="link" [href]="projectUrl" [icon]="linkIcon">Live Demo</app-button>
