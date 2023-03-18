@@ -1,0 +1,31 @@
+@layer base {
+    * {
+        @apply dark:text-neutral-200;
+    }
+
+    h1 {
+        @apply text-3xl font-bold my-2;
+    }
+
+    :host ::ng-deep h2 {
+        @apply text-2xl;
+    }
+
+    :host ::ng-deep h3 {
+        @apply text-xl font-medium my-2;
+    }
+
+    :host ::ng-deep h5 {
+        @apply text-lg my-2;
+    }
+
+    :host ::ng-deep p {
+        @apply text-base dark:text-neutral-300;
+    }
+
+    :host ::ng-deep ul {
+        @apply list-disc list-outside pl-10 my-4;
+    }
+}
+
+@tailwind base;
