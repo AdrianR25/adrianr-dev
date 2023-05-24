@@ -1,6 +1,13 @@
-<div class="h-full min-h-screen relative dark:bg-slate-800 transition-all duration-500 background-image">
-	<div class=" h-full box-border">
-		<router-outlet></router-outlet>
+<div class="bg-slate-800">
+	<!-- Moving blob -->
+	<div class="z-0" id="blob" #blob></div>
+	<div class="z-10" id="blur"></div>
+	<!-- Main content -->
+	<div class="h-full min-h-screen relative transition-all duration-500 z-20">
+		<div class="h-full box-border">
+			<router-outlet></router-outlet>
+		</div>
 	</div>
+	<!-- Navbar -->
+	<app-navbar class="fixed bottom-0 w-full z-20"></app-navbar>
 </div>
-<app-navbar class="fixed bottom-0 w-full"></app-navbar>

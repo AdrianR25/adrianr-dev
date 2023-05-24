@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'adrianr-dev';
+  @ViewChild("blob") blob!: ElementRef;
+  @HostListener('document:mousemove', ['$event']) 
+  onMouseMove(e: any) {
+    this.blob.nativeElement.animate({
+      left: `${e.clientX}px`,
+      top: `${e.clientY}px`
+    }, {duration: 3000, fill: "forwards"});
+  }
 }
