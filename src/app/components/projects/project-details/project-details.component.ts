@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
@@ -12,7 +11,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 export class ProjectDetailsComponent implements OnInit {
 
   projectId!: string;
-  project: any;
+  project: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +22,6 @@ export class ProjectDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => this.projectId = params['id']);
     this.contentful.getProject(this.projectId).then((value) => {
-      console.log(value);
       this.project = value;
     });
   }

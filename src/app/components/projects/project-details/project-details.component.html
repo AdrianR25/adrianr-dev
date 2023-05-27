@@ -1,6 +1,6 @@
-<div class="flex flex-col mx-60 py-16">
+<div class="flex flex-col mx-60 pt-16 pb-28">
     <h1 class="">{{ project.name }}</h1>
     <p>{{ project.shortDescription }}</p>
-    <img [src]="project.screenshot.fields.file.url" alt="screenshot of the homepage of r6checker.net" class="my-3 rounded-lg drop-shadow-md">
+    <img *ngIf="project.screenshot" [src]="project.screenshot.fields.file.url" alt="screenshot of the homepage of {{project.name}}" class="my-3 rounded-lg drop-shadow-md">
     <div [innerHTML]="htmlFromRichText(project.longDescription)" ></div>
 </div>
