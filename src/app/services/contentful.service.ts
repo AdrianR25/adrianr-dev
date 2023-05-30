@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import * as contentful from 'contentful';
-import { from, map } from 'rxjs';
 import { environment } from '../../environments/environment'
+import { createClient } from 'contentful';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentfulService {
 
-  private client = contentful.createClient({
+  private client = createClient({
     space: environment.contentful.spaceId,
     accessToken: environment.contentful.token
   })
@@ -28,9 +27,4 @@ export class ContentfulService {
     const promise = this.client.getEntries({select: 'fields.name,fields.screenshot,fields.shortDescription,fields.projectUrl,fields.codeUrl', content_type: 'project'});
     return promise.then(res => res.items);
   }
-  /*
-  // convert markdown string to 
-  markdownToHtml(md: string) {
-    return marked(md)
-  }*/
 }
