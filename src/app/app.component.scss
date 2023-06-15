@@ -1,0 +1,35 @@
+#blob {
+    background-color: white;
+    height: 250px;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(
+        to right,
+        #D4ADFC,
+        #1D267D
+    );
+    animation: rotate 15s infinite;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+    50% {
+        scale: 1 1.5;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    backdrop-filter: blur(150px);
+}
