@@ -1,0 +1,12 @@
+<ng-container *ngIf="type === 'link'; then linkButton else buttonButton"></ng-container>
+<ng-template #linkButton>
+    <a href="{{ href }}">
+        <div class="bg-indigo-400 dark:bg-indigo-800 rounded-md p-3 inline-block dark:text-white w-full text-center">
+            <fa-icon *ngIf="icon" [icon]="icon" class="mr-2"></fa-icon>
+            <ng-content></ng-content>
+        </div>
+    </a>
+</ng-template>
+<ng-template #buttonButton>
+
+</ng-template>
