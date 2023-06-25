@@ -5,7 +5,7 @@
 	</a>
 	<p class="p-4">{{ shortDesc }}</p>
 	<div class="p-4 pt-0 flex justify-end mt-auto">
-		<app-button *ngIf="projectUrl" type="link" [href]="projectUrl" [icon]="linkIcon">Live Demo</app-button>
-		<app-button *ngIf="codeUrl" type="link" [href]="codeUrl" [icon]="codeIcon" class="ml-3">Code</app-button>
+		<app-button *ngIf="projectUrl" type="link" [href]="projectUrl" icon="open_in_new">Live Demo</app-button>
+		<app-button *ngIf="codeUrl" type="link" [href]="codeUrl" icon="code" class="ml-3">Code</app-button>
 	</div>
 </div>
