@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faAddressBook, faHome, faList, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -7,11 +6,6 @@ import { faAddressBook, faHome, faList, faUser } from '@fortawesome/free-solid-s
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  homeIcon = faHome;
-  projectsIcon = faList;
-  aboutIcon = faUser;
-  contactIcon = faAddressBook;
 
   constructor() { }
 
