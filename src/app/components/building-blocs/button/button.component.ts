@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import * as fontAwesome from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-button',
@@ -10,7 +9,7 @@ export class ButtonComponent implements OnInit {
 
   @Input() type: 'link' | 'button' = 'link';
   @Input() href: String = '';
-  @Input() icon!: fontAwesome.IconDefinition;
+  @Input() icon!: String;
 
   constructor() { }
 

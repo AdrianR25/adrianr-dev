@@ -7,7 +7,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { AboutComponent } from './components/about/about.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
 import { ButtonComponent } from './components/building-blocs/button/button.component';
 import { ProjectDetailsComponent } from './components/projects/project-details/project-details.component';
@@ -26,7 +25,6 @@ import { ProjectDetailsComponent } from './components/projects/project-details/p
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
