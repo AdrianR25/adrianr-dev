@@ -1,11 +1,11 @@
-<div class="bg-white border-solid border-black border-2 w-80 rounded-md shadow-md dark:text-white dark:bg-gray-900 h-full flex flex-col">
+<div class=" bg-white w-80 rounded-md shadow-lg dark:text-white dark:bg-slate-800 h-full flex flex-col">
 	<a [routerLink]="['/project', projectId]">
 		<h4 class="p-4 text-xl font-semibold">{{ name }}</h4>
 		<img src="{{ imgSrc }}" alt>
 	</a>
 	<p class="p-4">{{ shortDesc }}</p>
 	<div class="p-4 pt-0 flex justify-end mt-auto">
-		<app-button *ngIf="projectUrl" type="link" [href]="projectUrl" icon="open_in_new">Live Demo</app-button>
-		<app-button *ngIf="codeUrl" type="link" [href]="codeUrl" icon="code" class="ml-3">Code</app-button>
+		<app-button *ngIf="codeUrl" styleClass="outlined" type="link" [href]="codeUrl" icon="code">Code</app-button>
+		<app-button *ngIf="projectUrl" type="link" [href]="projectUrl" icon="open_in_new" class="ml-3">Live Demo</app-button>
 	</div>
 </div>
