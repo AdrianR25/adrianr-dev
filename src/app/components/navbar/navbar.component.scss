@@ -1,8 +1,11 @@
 @import 'tailwindcss/components';
 
 @layer components {
+  .item{
+    @apply w-12 h-12 flex justify-center items-center rounded-full hover:bg-indigo-50 hover:dark:bg-slate-700;
+  }
   .active {
-    @apply rounded-full dark:bg-indigo-800 bg-indigo-400;
+    @apply dark:bg-indigo-400 bg-indigo-700 hover:dark:bg-indigo-400 hover:bg-indigo-700 text-white dark:text-slate-900;
   }
   .navbar-container {
     @apply flex flex-row justify-between px-12 py-2 mx-auto mb-5 w-96 bg-white rounded-full custom-drop-shadow dark:bg-slate-800 dark:text-slate-100;

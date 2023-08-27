@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input() type: 'link' | 'button' = 'link';
-  @Input() href: String = '';
-  @Input() icon!: String;
+  @Input() href: string = '';
+  @Input() icon!: string;
+  @Input() styleClass: 'filled' | 'outlined' = 'filled';
 
   constructor() { }
 
