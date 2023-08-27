@@ -19,7 +19,7 @@
 </div>
 
 <!-- Content -->
-<div *ngIf="!error" class="flex flex-col xl:mx-60 sm:mx-32 mx-4 sm:pt-16 pt-6 pb-28">
+<div *ngIf="project && !error" class="flex flex-col xl:mx-60 sm:mx-32 mx-4 sm:pt-16 pt-6 pb-28">
     <h1 class="">{{ project.name }}</h1>
     <p>{{ project.shortDescription }}</p>
     <img *ngIf="project.screenshot" [src]="project.screenshot.fields.file.url" alt="screenshot of the homepage of {{project.name}}" class="my-3 rounded-lg drop-shadow-md">
