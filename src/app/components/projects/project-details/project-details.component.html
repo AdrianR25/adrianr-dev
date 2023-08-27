@@ -1,4 +1,25 @@
-<div class="flex flex-col xl:mx-60 sm:mx-32 mx-4 sm:pt-16 pt-6 pb-28">
+<!-- Error -->
+<div *ngIf="error" class="h-screen w-fit flex md:flex-row flex-col-reverse justify-center items-center md:mx-auto mx-8 md:gap-24 gap-8">
+    <div class="flex flex-col md:w-1/3 sm:w-3/4 gap-2">
+        <h1>Ooops! This is not what you were looking for</h1>
+        <p>But it's not you, it's me. It appears that there was an error while loading this project.</p>
+        <app-button type="link" styleClass="filled" href="/projects" icon="gallery_thumbnail" class="w-full text-xl">Back to projects</app-button>
+    </div>
+    <img class="md:w-1/4 sm:w-3/4" src="../../../../assets/server-down.svg" alt="A small buddy cut a cable between a server and a computer">
+</div>
+
+<!-- Skeleton, shown while loading -->
+<div *ngIf="!project && !error" class="flex flex-col xl:mx-60 sm:mx-32 mx-4 sm:pt-20 pt-10 pb-28 gap-4 animate-pulse motion-reduce:animate-none">
+    <div class="w-40 h-5 bg-slate-400 dark:bg-slate-700 rounded-full"></div>
+    <div class="w-2/3 h-5 bg-slate-400 dark:bg-slate-700 rounded-full"></div>
+    <div class="w-full h-96 bg-slate-400 dark:bg-slate-700 rounded-xl"></div>
+    <div class="mt-4 w-4/5 h-5 bg-slate-400 dark:bg-slate-700 rounded-full"></div>
+    <div class="w-4/5 h-5 bg-slate-400 dark:bg-slate-700 rounded-full"></div>
+    <div class="w-1/2 h-5 bg-slate-400 dark:bg-slate-700 rounded-full"></div>
+</div>
+
+<!-- Content -->
+<div *ngIf="!error" class="flex flex-col xl:mx-60 sm:mx-32 mx-4 sm:pt-16 pt-6 pb-28">
     <h1 class="">{{ project.name }}</h1>
     <p>{{ project.shortDescription }}</p>
     <img *ngIf="project.screenshot" [src]="project.screenshot.fields.file.url" alt="screenshot of the homepage of {{project.name}}" class="my-3 rounded-lg drop-shadow-md">
