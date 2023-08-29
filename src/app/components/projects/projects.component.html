@@ -1,9 +1,33 @@
-<h1 class="text-center dark:text-white text-3xl py-5">Projects</h1>
-<div class="flex justify-center pb-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 m-4" [class.xl:grid-cols-3]="projects && projects.length >= 3">
-        <app-project-card *ngFor="let project of projects" [name]="project.fields.name"
-            [imgSrc]="project.fields.screenshot.fields.file.url" [shortDesc]="project.fields.shortDescription"
-            [projectUrl]="project.fields.projectUrl" [codeUrl]="project.fields.codeUrl" [projectId]="project.sys.id">
-        </app-project-card>
+<ng-container *ngIf="!error">
+    <h1 class="text-center dark:text-white text-3xl py-5">Projects</h1>
+    <div class="flex justify-center pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 m-4" [class.xl:grid-cols-3]="projects && projects.length >= 3">
+            <!-- Skeleton, shown while loading -->
+            <ng-container *ngIf="!projects">
+                <app-project-card *ngFor="let _ of [].constructor(2)" type="skeleton"></app-project-card>
+            </ng-container>
+    
+            <!-- Content -->
+            <ng-container *ngIf="projects">
+                <app-project-card *ngFor="let project of projects" [name]="project.fields.name"
+                    [imgSrc]="project.fields.screenshot.fields.file.url" [shortDesc]="project.fields.shortDescription"
+                    [projectUrl]="project.fields.projectUrl" [codeUrl]="project.fields.codeUrl"
+                    [projectId]="project.sys.id">
+                </app-project-card>
+            </ng-container>
+        </div>
     </div>
+</ng-container>
+
+<!-- Error -->
+<div *ngIf="error"
+class="h-screen w-fit flex md:flex-row flex-col-reverse justify-center items-center md:mx-auto mx-8 md:gap-24 gap-8">
+<div class="flex flex-col md:w-1/3 sm:w-3/4 gap-2">
+    <h1 class="text-3xl font-bold my-2 dark:text-neutral-200">Ooops! This is not what you were looking for</h1>
+    <p class="text-base dark:text-neutral-300">Heartbreaking, but it's not your fault. It appears that there was an error while loading the list of projects.</p>
+    <app-button type="link" styleClass="filled" href="https://github.com/AdrianR25" icon="deployed_code"
+        class="w-full text-xl">Look at my GitHub page</app-button>
+</div>
+<img class="md:w-1/4 sm:w-3/4" src="../../../../assets/server-down.svg"
+    alt="A small buddy cut a cable between a server and a computer">
 </div>

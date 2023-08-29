@@ -13,6 +13,7 @@ export class ProjectCardComponent implements OnInit {
   @Input() projectUrl = '';
   @Input() codeUrl = '';
   @Input() projectId = '';
+  @Input() type: 'content' | 'skeleton' = 'content';
 
   constructor() { }
 
