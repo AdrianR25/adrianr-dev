@@ -1,5 +1,5 @@
 .filled-button {
-    @apply transition-colors duration-100 dark:bg-indigo-400 bg-indigo-700 hover:bg-indigo-800 hover:dark:bg-indigo-500 rounded-md p-3 text-white dark:text-slate-900 font-bold w-full flex justify-center items-center;
+    @apply transition-colors duration-100 dark:bg-indigo-400 bg-indigo-700 hover:bg-indigo-800 hover:dark:bg-indigo-500 border-transparent border-2 rounded-md p-3 text-white dark:text-slate-900 font-bold w-full flex justify-center items-center;
 }
 
 .outlined-button {
