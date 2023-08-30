@@ -1,7 +1,7 @@
 .filled-button {
-    @apply dark:bg-indigo-400 bg-indigo-700 hover:bg-indigo-800 hover:dark:bg-indigo-500 rounded-md p-3 text-white dark:text-slate-900 font-bold w-full flex justify-center items-center;
+    @apply transition-colors duration-100 dark:bg-indigo-400 bg-indigo-700 hover:bg-indigo-800 hover:dark:bg-indigo-500 rounded-md p-3 text-white dark:text-slate-900 font-bold w-full flex justify-center items-center;
 }
 
 .outlined-button {
-    @apply dark:border-indigo-500 border-indigo-700 hover:bg-indigo-700 hover:dark:bg-indigo-500 hover:bg-opacity-5 hover:dark:bg-opacity-5 border-2 rounded-md p-3 text-indigo-700 dark:text-indigo-400 font-bold w-full flex justify-center items-center;
+    @apply transition-all duration-100 dark:border-indigo-500 border-indigo-700 hover:bg-indigo-700 hover:dark:bg-indigo-500 hover:bg-opacity-5 hover:dark:bg-opacity-5 border-2 rounded-md p-3 text-indigo-700 dark:text-indigo-400 font-bold w-full flex justify-center items-center;
 }
