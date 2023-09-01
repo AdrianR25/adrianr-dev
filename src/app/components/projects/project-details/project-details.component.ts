@@ -11,11 +11,11 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 export class ProjectDetailsComponent implements OnInit {
 
   projectId!: string;
-  project: any = {};
+  project: any;
+  error: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private contentful: ContentfulService
   ) { }
 
@@ -23,12 +23,12 @@ export class ProjectDetailsComponent implements OnInit {
     this.route.params.subscribe(params => this.projectId = params['id']);
     this.contentful.getProject(this.projectId).then((value) => {
       this.project = value;
-    });
+    }).catch(() => this.error = true);
   }
 
   htmlFromRichText(richText: any): string {
     if (richText === undefined || richText === null || richText.nodeType !== 'document') {
-      return '<p>Error</p>';
+      return '';
     }
     return documentToHtmlString(richText);
   }
