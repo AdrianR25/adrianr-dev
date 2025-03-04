@@ -1,0 +1,40 @@
+:root {
+  /* main colors, used for links, button background and call-to-action */
+  --color-primary: #ffffff;
+
+  /* surface colors, used for page and card backgrounds */
+  --color-background: #1a1c24;
+  --color-surface: #313542;
+
+  /* text colors */
+  --color-text: #e7e7e7;
+  --color-text-secondary: #000000;
+
+  --grid-gap: 10px;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--grid-gap) * -1) 0 0 calc(var(--grid-gap) * -1);
+}
+
+.col {
+  padding: calc(var(--grid-gap)) 0 0 calc(var(--grid-gap));
+  background-clip: content-box;
+  flex-basis: 100%;
+}
+
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+  .col--#{$i} {
+    flex-basis: round-width($i);
+    max-width: round-width($i);
+  }
+}
+
+@function round-width($i) {
+  $width: floor(100 * $i * 100 / $grid-columns) / 100;
+  @return $width#{"%"};
+}
