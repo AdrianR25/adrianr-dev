@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Aleo";
-  src: url("/fonts/Aleo-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Aleo-VariableFont_wght.woff2") format("woff2");
   font-stretch: normal; /* Note that font-stretch is a % of normal width */
   font-weight: 100 900;
 }
 
 @font-face {
   font-family: "Aleo";
-  src: url("/fonts/Aleo-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Aleo-Italic-VariableFont_wght.woff2") format("woff2");
   font-style: italic;
   font-stretch: normal; /* Note that font-stretch is a % of normal width */
   font-weight: 100 900;
@@ -15,14 +15,14 @@
 
 @font-face {
   font-family: "Rubik";
-  src: url("/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Rubik-VariableFont_wght.woff2") format("woff2");
   font-stretch: normal; /* Note that font-stretch is a % of normal width */
   font-weight: 300 900;
 }
 
 @font-face {
   font-family: "Rubik";
-  src: url("/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Rubik-Italic-VariableFont_wght.woff2") format("woff2");
   font-style: italic;
   font-stretch: normal; /* Note that font-stretch is a % of normal width */
   font-weight: 300 900;
