@@ -1,0 +1,58 @@
+---
+import Icon from "./icons/Icon.astro";
+
+const { variant, href, label } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "btn",
+    variant === "primary" && "btn-primary",
+    variant === "secondary" && "btn-secondary",
+  ]}
+>
+  <span>{label}</span>
+  {
+    Astro.slots.has("default") && (
+      <Icon size="lg">
+        <slot />
+      </Icon>
+    )
+  }
+</a>
+
+<style>
+  .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xs);
+
+    //width: fit-content;
+    padding-right: var(--space-sm);
+
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-weight: 300;
+    font-size: var(--text-lg);
+
+    > span {
+      padding: var(--space-xs) 0 var(--space-xs) var(--space-sm);
+    }
+  }
+
+  .btn-primary {
+    border: 1px solid var(--color-primary);
+
+    color: var(--color-text);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-primary);
+
+    color: var(--color-text-secondary);
+  }
+</style>
