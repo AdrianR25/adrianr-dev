@@ -1,0 +1,73 @@
+---
+import Button from "../components/Button.astro";
+import IconFastArrowDown from "../components/icons/IconFastArrowDown.astro";
+import IconSendMail from "../components/icons/IconSendMail.astro";
+
+import { Image } from "astro:assets";
+import programmingImg from "../imgs/programming.svg";
+---
+
+<div class="container margin-x-xxl">
+  <div class="content">
+    <header>
+      <h1>Adrian R</h1>
+      <h2>Software developer focused on web and mobile apps</h2>
+    </header>
+    <div class="content buttons">
+      <Button
+        variant="secondary"
+        label="Contact"
+        href="https://adrianr.dev/about"><IconSendMail /></Button
+      >
+      <Button
+        variant="primary"
+        label="Projects"
+        href="https://adrianr.dev/projects"><IconFastArrowDown /></Button
+      >
+    </div>
+  </div>
+  <Image src={programmingImg} alt="" loading="eager"/>
+</div>
+
+<style>
+  h1,
+  h2 {
+    margin: 0;
+  }
+
+  header {
+    > h1 {
+      font-size: var(--text-xxxl);
+      font-weight: 500;
+    }
+    > h2 {
+      font-family: var(--font-primary);
+      font-weight: 300;
+    }
+  }
+
+  .container {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xxl);
+
+    > img {
+      width: 500px;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    margin-top: var(--space-lg);
+    gap: var(--space-md);
+    margin-right: auto;
+  }
+</style>
