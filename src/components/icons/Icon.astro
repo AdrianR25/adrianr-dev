@@ -1,0 +1,48 @@
+---
+const { size } = Astro.props;
+---
+
+<svg
+  class:list={[
+    size === "xl" && "size-xl",
+    size === "lg" && "size-lg",
+    size === "md" && "size-md",
+    size === "sm" && "size-sm",
+  ]}
+  viewBox="0 0 24 24"
+  stroke-width="1"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  color="currentColor"
+>
+  <slot />
+</svg>
+
+<style>
+  :root {
+    --size-xl: 2.7rem;
+    --size-lg: 2rem;
+    --size-md: 1rem;
+    --size-sm: 0.7rem;
+  }
+
+  .size-xl {
+    width: var(--size-xl);
+    height: var(--size-xl);
+  }
+
+  .size-lg {
+    width: var(--size-lg);
+    height: var(--size-lg);
+  }
+
+  .size-md {
+    width: var(--size-md);
+    height: var(--size-md);
+  }
+
+  .size-sm {
+    width: var(--size-sm);
+    height: var(--size-sm);
+  }
+</style>
