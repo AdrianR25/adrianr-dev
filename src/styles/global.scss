@@ -2,7 +2,6 @@
 @import url(_typography.scss);
 
 :root {
-
   /* spacing */
   --space-xxs: 0.25rem;
   --space-xs: 0.5rem;
@@ -11,12 +10,32 @@
   --space-lg: 2rem;
   --space-xl: 3.25rem;
   --space-xxl: 6.7rem;
+
+  /* border */
+  --border-radius: 10px;
 }
 
 .margin-x-xxl {
   margin: 0 var(--space-xxl) 0 var(--space-xxl);
 }
 
+.margin-top-xxl {
+  margin-top: var(--space-xxl);
+}
+
 .padding-y-xl {
   padding: var(--space-xl) 0 var(--space-xl) 0;
 }
+
+.padding-md {
+  padding: var(--space-md);
+}
+
+.padding-x-md {
+  padding: 0 var(--space-md) 0 var(--space-md);
+}
+
+.padding-top-md {
+  padding-top: var(--space-md);
+}
+

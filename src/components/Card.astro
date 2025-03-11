@@ -1,0 +1,63 @@
+---
+import { Size } from "../types/Size";
+import Button from "./Button.astro";
+import IconGithub from "./icons/IconGithub.astro";
+import IconOpenNewWindow from "./icons/IconOpenNewWindow.astro";
+---
+
+<article>
+    <header>
+        <img src="https://images.ctfassets.net/tl8av3jj8ro5/6ziAXbHismN0LBMnozPJVf/31025baeedc31c293b4cadc19982a8fe/Captura_web_12-6-2023_174221_localhost.jpeg" alt="">
+        <h2 class="padding-x-md padding-top-md">R6Checker.net</h2>
+    </header>
+    <section class="padding-md">
+        <p>Was a web app to check if a Rainbow Six: Siege player is cheating.
+            It used Angular on the frontend, Django on the backend and was deployed on a traditional hosting and Heroku respectively.</p>
+            <div class="buttons padding-top-md">
+                <Button href="" variant="secondary" label="See code" size={Size.MD}><IconGithub/></Button>
+                <Button href="" variant="primary" label="Live demo" size={Size.MD}><IconOpenNewWindow/></Button>
+            </div>
+    </section>
+</article>
+
+<style>
+    article {
+        background-color: var(--color-surface);
+        
+        border: 1px solid var(--color-surface);
+        border-radius: var(--border-radius);
+
+        overflow: hidden;
+
+        width: fit-content;
+        height: fit-content;
+    }
+
+    h2 {
+        font-family: var(--font-primary);
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    section {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        > * {
+            margin-left: auto;
+        }
+
+        > *:first-of-type {
+            margin-bottom: var(--space-sm);
+        }
+    }
+</style>

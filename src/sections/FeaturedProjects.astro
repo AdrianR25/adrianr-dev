@@ -1,4 +1,8 @@
-<section class="padding-y-xl">
+---
+import Card from "../components/Card.astro";
+---
+
+<section class="padding-y-xl section">
   <header>
     <svg width="100%" height="1">
       <line x1="0" y1="0" x2="100%" y2="0" stroke-width="2"
@@ -10,10 +14,15 @@
       ></line>
     </svg>
   </header>
+  <section class="grid margin-x-xxl margin-top-xxl">
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+  </section>
 </section>
 
 <style>
-  section {
+  .section {
     box-sizing: border-box;
     height: 100vh;
   }
@@ -31,5 +40,11 @@
        flex-shrink: 1;
        stroke: var(--color-primary);
     }
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: var(--space-xl)
   }
 </style>
