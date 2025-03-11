@@ -5,6 +5,7 @@ import IconSendMail from "../components/icons/IconSendMail.astro";
 
 import { Image } from "astro:assets";
 import programmingImg from "../imgs/programming.svg";
+import { Size } from "../types/Size";
 ---
 
 <div class="container margin-x-xxl">
@@ -16,11 +17,13 @@ import programmingImg from "../imgs/programming.svg";
     <div class="content buttons">
       <Button
         variant="secondary"
+        size={Size.LG}
         label="Contact"
         href="https://adrianr.dev/about"><IconSendMail /></Button
       >
       <Button
         variant="primary"
+        size={Size.LG}
         label="Projects"
         href="https://adrianr.dev/projects"><IconFastArrowDown /></Button
       >

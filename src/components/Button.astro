@@ -1,7 +1,15 @@
 ---
+import { Size } from "../types/Size";
 import Icon from "./icons/Icon.astro";
 
-const { variant, href, label } = Astro.props;
+interface Props {
+  variant: "primary" | "secondary";
+  href: string;
+  label: string;
+  size: Size;
+}
+
+const { variant, href, label, size } = Astro.props;
 ---
 
 <a
@@ -10,12 +18,16 @@ const { variant, href, label } = Astro.props;
     "btn",
     variant === "primary" && "btn-primary",
     variant === "secondary" && "btn-secondary",
+    size === Size.XL && "text-xl",
+    size === Size.LG && "text-lg",
+    size === Size.MD && "text-md",
+    size === Size.SM && "text-sm",
   ]}
 >
   <span>{label}</span>
   {
     Astro.slots.has("default") && (
-      <Icon size="lg">
+      <Icon size={size}>
         <slot />
       </Icon>
     )
@@ -36,7 +48,6 @@ const { variant, href, label } = Astro.props;
 
     text-decoration: none;
     font-weight: 300;
-    font-size: var(--text-lg);
 
     > span {
       padding: var(--space-xs) 0 var(--space-xs) var(--space-sm);
@@ -44,14 +55,15 @@ const { variant, href, label } = Astro.props;
   }
 
   .btn-primary {
-    border: 1px solid var(--color-primary);
-
-    color: var(--color-text);
-  }
-
-  .btn-secondary {
     background-color: var(--color-primary);
 
     color: var(--color-text-secondary);
   }
+  
+  .btn-secondary {
+    border: 1px solid var(--color-primary);
+
+    color: var(--color-text);
+  }
+  
 </style>
