@@ -1,0 +1,84 @@
+---
+import Image from "astro/components/Image.astro";
+import Button from "../components/Button.astro";
+import IconSendMail from "../components/icons/IconSendMail.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import { Size } from "../types/Size";
+import message from "../imgs/message-sent.svg";
+---
+
+<section class="padding-y-xl section">
+  <SectionHeader title="About me" />
+  <div class="content margin-x-xxl margin-top-xxl">
+    <section>
+      <p>
+        Hello there! My name is Adrián and I am a junior programmer who was born
+        and raised in Spain. I have always had a passion for technology, and I
+        am always curious about the latest trends and advancements in this
+        field.
+      </p>
+      <p>
+        As a programmer, I enjoy the challenge of finding innovative solutions
+        to complex problems. I find great satisfaction in turning my ideas into
+        reality through coding, and I am constantly looking for ways to improve
+        my skills and expand my knowledge.
+      </p>
+      <p>
+        In addition to programming, I enjoy exploring new technology and
+        gadgets. I find it fascinating to see how technology has evolved over
+        time and how it continues to shape the world we live in today. My
+        curiosity about technology extends beyond just software and programming,
+        and I am always eager to learn about new hardware and devices as well.
+      </p>
+      <p>
+        When I'm not working on a project or discovering new technology, you can
+        usually find me playing video games. Gaming is another one of my hobbies
+        that I enjoy in my free time. I find it to be a great way to unwind and
+        relax after a long day of coding.
+      </p>
+      <p>
+        One of the qualities that sets me apart from others is my proactive
+        approach to work and life. I am always looking for ways to improve
+        myself, take on new challenges, and find solutions to problems. This
+        proactive mindset is what drives me to constantly learn and grow in my
+        field, and I believe it is a key factor in my success as a programmer.
+      </p>
+      <p>
+        Thank you for taking the time to read my about me page. If you have any
+        questions or would like to connect, feel free to reach out to me!
+      </p>
+    </section>
+    <section class="contact">
+      <h2>Contact me</h2>
+      <Button
+        variant="secondary"
+        size={Size.LG}
+        label="Via email"
+        href="mailto:adrian@adrianr.dev"><IconSendMail /></Button
+      >
+      <Image src={message} alt=""></Image>
+    </section>
+  </div>
+</section>
+<style>
+  .content {
+    display: flex;
+    gap: var(--space-xxl);
+    flex-grow: 0;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 25%;
+  }
+
+  h2,
+  p:first-of-type {
+    margin: 0;
+  }
+
+  img {
+    width: 90%;
+  }
+</style>
