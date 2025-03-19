@@ -1,14 +1,19 @@
 ---
 import Card from "../components/Card.astro";
 import SectionHeader from "../components/SectionHeader.astro";
+
+import { getCollection } from 'astro:content';
+const projects = await getCollection('projects', ({ data }) => {
+  return data.featured;
+});
 ---
 
 <section class="padding-y-xl section">
   <SectionHeader title="Featured projects" />
   <section class="grid margin-x-xxl margin-top-xxl">
-    <Card />
-    <Card />
-    <Card />
+    {projects.map(project => (
+      <Card project={project}/> 
+    ))}
   </section>
 </section>
 
