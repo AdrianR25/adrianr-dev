@@ -1,0 +1,26 @@
+---
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+---
+
+<Layout>
+  <main class="padding-y-xl margin-x-xxl">
+      <header>
+        <h1>All projects</h1>
+      </header>
+      <section class="grid margin-top-xxl">
+        {projects.map((project) => <Card project={project} />)}
+      </section>
+  </main>
+</Layout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: var(--space-xxl);
+  }
+</style>
