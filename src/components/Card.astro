@@ -13,17 +13,19 @@ const { project } = Astro.props;
 ---
 
 <article>
-    <header>
-        <img src="https://images.ctfassets.net/tl8av3jj8ro5/6ziAXbHismN0LBMnozPJVf/31025baeedc31c293b4cadc19982a8fe/Captura_web_12-6-2023_174221_localhost.jpeg" alt="">
-        <h2 class="padding-x-md padding-top-md">{ project.data.title }</h2>
-    </header>
-    <section class="padding-md">
-        <p>{ project.data.description }</p>
-        <div class="buttons padding-top-md">
-            { project.data.codeUrl && <Button href={project.data.codeUrl} variant="secondary" label="See code" size={Size.MD}><IconGithub/></Button>}
-            { project.data.demoUrl && <Button href={project.data.demoUrl} variant="primary" label="Live demo" size={Size.MD}><IconOpenNewWindow/></Button>}
-        </div>
-    </section>
+    <a href={`projects/${project.id}`}>
+        <header>
+            <img src="https://images.ctfassets.net/tl8av3jj8ro5/6ziAXbHismN0LBMnozPJVf/31025baeedc31c293b4cadc19982a8fe/Captura_web_12-6-2023_174221_localhost.jpeg" alt="">
+            <h2 class="padding-x-md padding-top-md">{ project.data.title }</h2>
+        </header>
+        <section class="padding-md">
+            <p>{ project.data.description }</p>
+            <div class="buttons padding-top-md">
+                { project.data.codeUrl && <Button href={project.data.codeUrl} variant="secondary" label="See code" size={Size.MD}><IconGithub/></Button>}
+                { project.data.demoUrl && <Button href={project.data.demoUrl} variant="primary" label="Live demo" size={Size.MD}><IconOpenNewWindow/></Button>}
+            </div>
+        </section>
+    </a>
 </article>
 
 <style>
@@ -40,6 +42,11 @@ const { project } = Astro.props;
 
         width: fit-content;
         height: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 
     h2 {
