@@ -7,12 +7,17 @@ interface Props {
   href: string;
   label: string;
   size: Size;
+  external?: boolean;
 }
 
-const { variant, href, label, size } = Astro.props;
+const { variant = "primary", href, label, size = Size.MD, external = false } = Astro.props;
 ---
 
 <a
+  {...(external && { 
+    "target": "_blank",
+    "rel":"noopener noreferrer"}
+  )}
   href={href}
   class:list={[
     "btn",

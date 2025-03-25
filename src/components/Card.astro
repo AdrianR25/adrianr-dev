@@ -21,8 +21,8 @@ const { project } = Astro.props;
         <section class="padding-md">
             <p>{ project.data.description }</p>
             <div class="buttons padding-top-md">
-                { project.data.codeUrl && <Button href={project.data.codeUrl} variant="secondary" label="See code" size={Size.MD}><IconGithub/></Button>}
-                { project.data.demoUrl && <Button href={project.data.demoUrl} variant="primary" label="Live demo" size={Size.MD}><IconOpenNewWindow/></Button>}
+                { project.data.codeUrl && <Button href={project.data.codeUrl} variant="secondary" label="See code" size={Size.MD} external={true}><IconGithub/></Button>}
+                { project.data.demoUrl && <Button href={project.data.demoUrl} variant="primary" label="Live demo" size={Size.MD} external={true}><IconOpenNewWindow/></Button>}
             </div>
         </section>
     </a>
