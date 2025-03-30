@@ -1,0 +1,31 @@
+---
+import type { InferEntrySchema } from "astro:content";
+import { getEntries } from "astro:content";
+
+interface Props {
+  projectData: InferEntrySchema<"projects">;
+}
+
+const { projectData } = Astro.props;
+const technologies = await getEntries(projectData.technologies);
+console.log(technologies);
+---
+
+<section class="padding-md">
+  <p>Technologies used</p>
+  {technologies.map((technology) => <span>{technology.data.name}</span>)}
+  <p>Stats</p>
+  <div><span>Launch</span><span>{projectData.launchDate.getFullYear()}</span></div>
+  <div><span>End of life</span><span>{projectData.eolDate?.getFullYear()}</span></div>
+  <p>What I've learnt</p>
+  <ul>
+    {projectData.learnt.map((line) => <li>{line}</li>)}
+  </ul>
+</section>
+
+<style>
+    section {
+        border: 1px solid var(--color-primary);
+        border-radius: var(--border-radius);
+    }
+</style>
