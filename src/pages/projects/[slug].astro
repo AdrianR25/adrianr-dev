@@ -19,11 +19,30 @@ const { Content } = await render(project);
 ---
 
 <Layout>
-  <main>
-    <h1>{project.data.title}</h1>
-    <Content />
-  </main>
-  <aside>
-    <ProjectMeta projectData={project.data}/>
-  </aside>
+  <div class="page-layout">
+    <main>
+      <h1>{project.data.title}</h1>
+      <Content />
+    </main>
+    <aside>
+      <ProjectMeta projectData={project.data}/>
+    </aside>
+  </div>
 </Layout>
+
+<style>
+  .page-layout {
+    display: flex;
+    gap: var(--space-xxl);
+    > main {
+      width: 75%;
+    }
+
+    > aside {
+      position: sticky;
+      top: var(--space-xxl);
+      width: 25%;
+      height: fit-content;
+    }
+  }
+</style>
