@@ -13,11 +13,45 @@
 
   /* border */
   --border-radius: 10px;
+
 }
+
+/* screen sizes */
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+$xxl-breakpoint: 1400px;
 
 .section {
   box-sizing: border-box;
   min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  width: 100%;
+
+  @media (min-width: $sm-breakpoint) {
+    max-width: 540px;
+  }
+
+  @media (min-width: $md-breakpoint) {
+    max-width: 720px;
+  }
+
+  @media (min-width: $lg-breakpoint) {
+    max-width: 960px;
+  }
+
+  @media (min-width: $xl-breakpoint) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    max-width: 1320px;
+  }
 }
 
 .margin-x-xxl {
@@ -43,4 +77,3 @@
 .padding-top-md {
   padding-top: var(--space-md);
 }
-
