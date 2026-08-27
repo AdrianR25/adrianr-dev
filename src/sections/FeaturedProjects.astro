@@ -13,7 +13,7 @@ const projects = await getCollection('projects', ({ data }) => {
 
 <section class="padding-y-xl section">
   <SectionHeader title="Featured projects" />
-  <section class="grid margin-x-xxl margin-top-xxl">
+  <section class="grid margin-top-xxl">
     {projects.map(project => (
       <Card project={project}/> 
     ))}
@@ -24,8 +24,9 @@ const projects = await getCollection('projects', ({ data }) => {
 <style>
   .grid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: var(--space-xxl);
+    grid-template-columns: repeat(3, auto);
+    gap: var(--space-xl);
+    justify-content: center;
   }
 
   .flex-center {
