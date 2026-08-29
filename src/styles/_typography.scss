@@ -33,16 +33,16 @@
   --font-secondary: "Aleo";
 
   /* set base values */
-  --text-base-size: 18px;
+  --text-base-size: 1rem;
 
   /* type scale */
-  --text-xs: 0.5rem
-  --text-sm: 0.9rem;
-  --text-md: 1rem;
-  --text-lg: 1.3rem;
-  --text-xl: 2rem;
-  --text-xxl: 2.7rem;
-  --text-xxxl: 4rem;
+  --text-xs: calc(var(--text-base-size) * 0.5);
+  --text-sm: calc(var(--text-base-size) * 0.75);
+  --text-md: var(--text-base-size);
+  --text-lg: calc(var(--text-base-size) * 1.25);
+  --text-xl: calc(var(--text-base-size) * 1.5);
+  --text-xxl: calc(var(--text-base-size) * 1.75);
+  --text-xxxl: calc(var(--text-base-size) * 2);
 
   font-size: var(--text-base-size);
 }
@@ -62,11 +62,11 @@ form legend {
   font-weight: 400;
 }
 
+h1,
 .text-xxxl {
     font-size: var(--text-xxxl);
 }
 
-h1,
 .text-xxl {
   font-size: var(--text-xxl);
 }
