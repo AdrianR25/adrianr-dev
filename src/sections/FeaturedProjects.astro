@@ -11,14 +11,14 @@ const projects = await getCollection('projects', ({ data }) => {
 });
 ---
 
-<section class="padding-y-xl section">
+<section class="section">
   <SectionHeader title="Featured projects" />
-  <section class="grid margin-top-xxl">
+  <section class="grid">
     {projects.map(project => (
       <Card project={project}/> 
     ))}
   </section>
-  <div class="projects-button margin-top-xxl"><Button variant="primary" size={Size.LG} href="/projects" label="Check all projects"><IconMultiWindow/></Button></div>
+  <div class="projects-button"><Button variant="primary" size={Size.LG} href="/projects" label="Check all projects"><IconMultiWindow/></Button></div>
 </section>
 
 <style>
@@ -36,6 +36,7 @@ const projects = await getCollection('projects', ({ data }) => {
   }
 
   .projects-button {
+    margin-top: var(--space-xl);
     display: flex;
     justify-content: center;
   }

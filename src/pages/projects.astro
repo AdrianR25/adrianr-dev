@@ -7,11 +7,11 @@ const projects = await getCollection("projects");
 ---
 
 <Layout>
-  <main class="padding-y-xl margin-x-xxl">
+  <main class="container">
       <header>
         <h1>All projects</h1>
       </header>
-      <section class="grid margin-top-xxl">
+      <section class="grid">
         {projects.map((project) => <Card project={project} />)}
       </section>
   </main>
@@ -22,5 +22,9 @@ const projects = await getCollection("projects");
     display: grid;
     grid-template-columns: auto auto auto;
     gap: var(--space-xxl);
+  }
+
+  header {
+    margin: var(--space-xl) 0;
   }
 </style>

@@ -16,11 +16,11 @@ const { project } = Astro.props;
     <a href={`projects/${project.id}`}>
         <header>
             <img src="https://images.ctfassets.net/tl8av3jj8ro5/6ziAXbHismN0LBMnozPJVf/31025baeedc31c293b4cadc19982a8fe/Captura_web_12-6-2023_174221_localhost.jpeg" alt="">
-            <h2 class="padding-x-md padding-top-md">{ project.data.title }</h2>
+            <h2>{ project.data.title }</h2>
         </header>
-        <section class="padding-md">
+        <section>
             <p>{ project.data.description }</p>
-            <div class="buttons padding-top-md">
+            <div class="buttons">
                 { project.data.codeUrl && <Button href={project.data.codeUrl} variant="secondary" label="See code" size={Size.MD} external={true}><IconGithub/></Button>}
                 { project.data.demoUrl && <Button href={project.data.demoUrl} variant="primary" label="Live demo" size={Size.MD} external={true}><IconOpenNewWindow/></Button>}
             </div>
@@ -48,11 +48,15 @@ const { project } = Astro.props;
     a {
         text-decoration: none;
         color: inherit;
+        > p {
+            margin: 0;
+        }
     }
 
     h2 {
         font-family: var(--font-primary);
         margin: 0;
+        margin: var(--space-md) var(--space-md) 0 var(--space-md);
     }
 
     img {
@@ -64,9 +68,11 @@ const { project } = Astro.props;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: var(--space-md)
     }
 
     .buttons {
+        margin-top: var(--space-md);
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
