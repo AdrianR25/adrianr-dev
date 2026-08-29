@@ -17,14 +17,14 @@ import { Size } from "../types/Size";
     <div class="content buttons">
       <Button
         variant="secondary"
-        size={Size.LG}
+        size={Size.XL}
         label="Contact"
         href="https://adrianr.dev/about"
         external={true}><IconSendMail /></Button
       >
       <Button
         variant="primary"
-        size={Size.LG}
+        size={Size.XL}
         label="Projects"
         href="https://adrianr.dev/projects"
         external={true}><IconFastArrowDown /></Button
@@ -34,7 +34,7 @@ import { Size } from "../types/Size";
   <Image src={programmingImg} alt="" loading="eager" class="item"/>
 </section>
 
-<style>
+<style lang="scss">
   h1,
   h2 {
     margin: 0;
@@ -42,10 +42,11 @@ import { Size } from "../types/Size";
 
   header {
     > h1 {
-      font-size: var(--text-xxxl);
+      font-size: calc(var(--text-base-size) * 4);
       font-weight: 500;
     }
     > h2 {
+      font-size: var(--text-xxxl);
       font-family: var(--font-primary);
       font-weight: 300;
     }

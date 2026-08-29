@@ -69,12 +69,9 @@ const { project } = Astro.props;
     .buttons {
         display: flex;
         flex-direction: column;
+        gap: var(--space-sm);
         > * {
             margin-left: auto;
-        }
-
-        > *:first-of-type {
-            margin-bottom: var(--space-sm);
         }
     }
 </style>

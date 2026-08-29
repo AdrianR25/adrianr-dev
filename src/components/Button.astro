@@ -23,10 +23,10 @@ const { variant = "primary", href, label, size = Size.MD, external = false } = A
     "btn",
     variant === "primary" && "btn-primary",
     variant === "secondary" && "btn-secondary",
-    size === Size.XL && "text-xl",
-    size === Size.LG && "text-lg",
-    size === Size.MD && "text-md",
-    size === Size.SM && "text-sm",
+    size === Size.XL && "btn-xl",
+    size === Size.LG && "btn-lg",
+    size === Size.MD && "btn-md",
+    size === Size.SM && "btn-sm",
   ]}
 >
   <span>{label}</span>
@@ -39,24 +39,19 @@ const { variant = "primary", href, label, size = Size.MD, external = false } = A
   }
 </a>
 
-<style>
+<style lang="scss">
   .btn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: var(--space-xs);
-
-    padding-right: var(--space-sm);
+    padding: var(--space-xxs) var(--space-md);
 
     border-radius: 50px;
 
     text-decoration: none;
     font-weight: 300;
-
-    > span {
-      padding: var(--space-xs) 0 var(--space-xs) var(--space-sm);
-    }
   }
 
   .btn-primary {
@@ -69,6 +64,23 @@ const { variant = "primary", href, label, size = Size.MD, external = false } = A
     border: 1px solid var(--color-primary);
 
     color: var(--color-text);
+  }
+
+  .btn-xl {
+    font-size: var(--text-xl);
+  }
+
+  .btn-lg {
+    font-size: var(--text-lg);
+  }
+
+  .btn-md {
+    font-size: var(--text-md);
+    
+  }
+
+  .btn-sm {
+    font-size: var(--text-sm);
   }
   
 </style>
