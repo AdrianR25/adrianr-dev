@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import ProjectMeta from "../../components/ProjectMeta.astro";
+import ProjectMeta from "../../components/project-meta/ProjectMeta.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -19,18 +19,30 @@ const { Content } = await render(project);
 ---
 
 <Layout>
-  <div class="page-layout">
-    <main>
-      <h1>{project.data.title}</h1>
-      <Content />
-    </main>
-    <aside>
-      <ProjectMeta projectData={project.data}/>
-    </aside>
+  <div class="container">
+    <h1>{project.data.title}</h1>
+    <div class="page-layout">
+      <main>
+        <Content />
+      </main>
+      <aside>
+        <ProjectMeta projectData={project.data} />
+      </aside>
+    </div>
   </div>
 </Layout>
 
 <style>
+  h1 {
+    margin: var(--space-xl) 0;
+  }
+
+  main {
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+
   .page-layout {
     display: flex;
     gap: var(--space-xxl);

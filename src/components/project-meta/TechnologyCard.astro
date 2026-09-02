@@ -1,0 +1,41 @@
+---
+import type { InferEntrySchema } from "astro:content";
+import Icon from "../icons/Icon.astro";
+import { Size } from "../../types/Size";
+import IconOpenNewWindow from "../icons/IconOpenNewWindow.astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  technology: InferEntrySchema<"technologies">;
+}
+const { technology } = Astro.props;
+---
+
+<article class="padding-sm">
+    <Image src={technology.logoUrl} alt="test" height={48} width={48}/>
+
+    <div>
+        <p>{technology.name}</p>
+        <p>{technology.role}</p>
+    </div>
+    
+    <a href={technology.url} target="_blank">
+        <Icon size={Size.LG}><IconOpenNewWindow /></Icon>
+    </a>
+</article>
+
+<style>
+    article {
+        background-color: var(--color-surface);
+        border-radius: var(--border-radius);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        color: inherit;
+    }
+</style>

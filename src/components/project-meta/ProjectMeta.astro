@@ -1,0 +1,119 @@
+---
+import type { InferEntrySchema } from "astro:content";
+import { getEntries } from "astro:content";
+import { Size } from "../../types/Size";
+import Icon from "../icons/Icon.astro";
+import IconCalendar from "../icons/IconCalendar.astro";
+import IconCalendarXmark from "../icons/IconCalendarXmark.astro";
+import TechnologyCard from "./TechnologyCard.astro";
+
+interface Props {
+  projectData: InferEntrySchema<"projects">;
+}
+
+const { projectData } = Astro.props;
+const technologies = await getEntries(projectData.technologies);
+---
+
+<section>
+  <header class="margin-y-md">
+    <svg width="100%" height="1">
+      <line x1="0" y1="0" x2="100%" y2="0" stroke-width="2"></line>
+    </svg>
+    <h2>Technologies used</h2>
+  </header>
+  {technologies.map((technology) => <TechnologyCard technology={technology.data}/>)}
+  
+  <header class="margin-y-md">
+    <svg width="100%" height="1">
+      <line x1="0" y1="0" x2="100%" y2="0" stroke-width="2"></line>
+    </svg>
+    <h2>Stats</h2>
+  </header>
+
+  <div class="stat-container">
+    <div class="stat-wrapper">
+      <Icon size={Size.LG}><IconCalendar/></Icon>
+      <div class="stat">
+        <h3>Launch</h3>
+        <span class="stat-value padding-x-xs">{projectData.launchDate.getFullYear()}</span>
+      </div>
+    </div>
+    <div class="stat-wrapper">
+      <Icon size={Size.LG}><IconCalendarXmark/></Icon>
+      <div class="stat">
+        <h3>End of life</h3>
+        <span class="stat-value padding-x-xs">{projectData.eolDate?.getFullYear()}</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="margin-y-md">
+    <svg width="100%" height="1">
+      <line x1="0" y1="0" x2="100%" y2="0" stroke-width="2"></line>
+    </svg>
+    <h2>What I've learnt</h2>
+  </header>
+  <ul>
+    {projectData.learnt.map((line) => <li>{line}</li>)}
+  </ul>
+</section>
+
+<style>
+    section {
+      padding: var(--space-md);
+
+      border: 1px solid var(--color-primary);
+      border-radius: var(--border-radius);
+    }
+
+    h3 {
+      margin: 0;
+      font-family: var(--font-primary);
+      font-size: var(--text-md);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+
+      > h2 {
+        margin: 0;
+        font-family: var(--font-primary);
+        font-size: var(--text-lg);
+      }
+      > svg {
+        width: 4%;
+        stroke: var(--color-primary);
+      }
+    }
+
+    li {
+      font-weight: 300;
+    }
+    li:not(:last-child) {
+      margin-bottom: var(--space-xxs);
+    }
+
+    .stat-container {
+      display: flex;
+      gap: var(--space-lg);
+    }
+    .stat-wrapper {
+      display: flex;
+      gap: var(--space-sm);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .stat-value {
+      border: 1px solid var(--color-primary);
+      border-radius: 50px;
+      text-align: center;
+    }
+</style>

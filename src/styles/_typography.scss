@@ -67,26 +67,27 @@ h1,
     font-size: var(--text-xxxl);
 }
 
+h2,
 .text-xxl {
   font-size: var(--text-xxl);
 }
 
-h2,
+h3,
 .text-xl {
   font-size: var(--text-xl);
 }
 
-h3,
+h4,
 .text-lg {
   font-size: var(--text-lg);
 }
 
-h4,
+h5,
 .text-md {
   font-size: var(--text-md);
 }
 
-p {
+p, li, span {
   font-weight: 300;
 }
 
